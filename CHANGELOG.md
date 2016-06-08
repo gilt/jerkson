@@ -1,3 +1,48 @@
+v0.6.9-SNAPSHOT: June 08 2016
+=============================
+* Restore old tests and convert to scalatest. Enable parallel test execution.
+* Upgrade jackson to 2.7.4.
+
+v0.6.8-2: Jun 01 2016
+=====================
+* Another fix for parameter type mismatch exception
+
+v0.6.8-1: Jun 01 2016
+=====================
+* Fix parameter type mismatch exception on nested parameterized types
+
+v0.6.8: Aug 27 2015
+===================
+* Upgrade to jackson 2.6.1
+
+v0.6.7: Feb 03 2015
+===================
+* Fixed the Right case of Either in EitherDeserializer. TreeTraversingParser was reused for Right value after being used for Left value.
+
+v0.6.6: Sep 01 2014
+==================
+* Upgraded to Jackson 2.4.1
+* Add scala 2.11
+
+v0.6.5: Feb 17 2014
+====================
+* Target JVM 1.6 explicitly (also scala 2.10.2)
+
+v0.6.3: Apr 11 2013
+===================
+* Streaming field iterator patch (See: 85076b9daeeb3ba3c3c3f0fbdd60deaf09fb275b)
+
+v0.6.2: Apr 03 2013
+===================
+* Match the syntax style in AST.scala to the rest of the library
+* Dropped support for Scala 2.8.2
+* Remove legacy Scala 2.8 deserializers
+* Upgrade jackson to 2.0.2
+* Streaming iteration patch (See: 5e8f94eef25933995f79e74ef5403265cfd64bc0)
+* Delete tests since sbt cannot run [simplespec](https://github.com/SimpleFinance/simplespec) tests.
+* Minor tweaks to get compilation in 2.10
+* Switch to sbt from maven
+
 v0.5.0: Oct 07 2011
 ===================
 

@@ -7,20 +7,20 @@ licenses := Seq(
   ("The MIT License", url("http://codahale.com/mit.txt"))
 )
 
-homepage := Some(url("https://github.com/cphylabs/jerkson"))
+homepage := Some(url("https://github.com/gilt/jerkson"))
 
 scmInfo := Some(
   ScmInfo(
-    url("https://github.com/cphylabs/jerkson"),
-    "scm:git:https://github.com/cphylabs/jerkson.git",
-    Some("scm:git:git@github.com:cphylabs/jerkson.git")
+    url("https://github.com/gilt/jerkson"),
+    "scm:git:https://github.com/gilt/jerkson.git",
+    Some("scm:git:git@github.com:gilt/jerkson.git")
   )
 )
 
 /* scala versions and options */
 scalaVersion := "2.10.5"
 
-crossScalaVersions := Seq("2.10.5", "2.11.7")
+crossScalaVersions := Seq("2.10.5", "2.11.8")
 
 // These options will be used for *all* versions.
 scalacOptions ++= Seq(
@@ -77,6 +77,11 @@ traceLevel := 5
 
 offline := false
 
+/* releasing */
+releaseCrossBuild := true
+
+releasePublishArtifactsAction := PgpKeys.publishSigned.value
+
 /* publishing */
 publishMavenStyle := true
 
@@ -98,6 +103,16 @@ pomExtra := (
       <id>cphylabs</id>
       <name>CloudPhysics Inc</name>
       <email>opensource@cloudphysics.com</email>
+    </developer>
+    <developer>
+      <id>ebowman</id>
+      <name>Eric Bowman</name>
+      <url>https://github.com/ebowman</url>
+    </developer>
+    <developer>
+      <id>gheine</id>
+      <name>Gregor Heine</name>
+      <url>https://github.com/gheine</url>
     </developer>
   </developers>
 )

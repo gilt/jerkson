@@ -1,21 +1,11 @@
 # Jerkson #
 
-This fork of Jerkson contains patches not found in the original, abandoned, copy.
-
-## Differences from upstream Jerkson ##
-
-- sbt instead of Maven.
-- Tests have been converted to scalatest
-  [simplespec](https://github.com/SimpleFinance/simplespec) tests.
-- Minor tweaks to get compilation in 2.10.
-- [Streaming iteration patch](https://github.com/ymasory/jerkson/pull/1), if you
-  use version 0.6.2+.
-- [Streaming field iterator patch](https://github.com/cphylabs/jerkson/commit/85076b9daeeb3ba3c3c3f0fbdd60deaf09fb275b), if you use version 0.6.3+.
+This fork of Jerkson contains patches not found in the original, abandoned, copy. See the [changelog](CHANGELOG.md) for more info.
 
 ## Install ##
 
 - This version of Jerkson is hosted on
-  [Maven Central](http://central.maven.org/maven2/com/cloudphysics/jerkson_2.10).
+  [Maven Central](http://central.maven.org/maven2/com/gilt/jerkson_2.10/).
 - From sbt:
 
   ```scala
@@ -39,12 +29,15 @@ $ sbt compile
 $ sbt test
 ```
 
-## Future plans ##
+## Contributing ##
 
-Jerkson is legacy.
-We won't do any further work except providing the 2.10 jars.
-We suggest you switch to one of the many excellent Scala Json libraries.
+- Write your code, with tests
+- Make sure the tests pass
+- Update the CHANGELOG.md
+- Make a PR!
 
-## Contact ##
+## Releasing ##
 
-[opensource@cloudphysics.com](opensource@cloudphysics.com)
+Make sure you update:
+- CHANGELOG.md
+- Make a release in github

@@ -84,7 +84,7 @@ trait Parser extends Factory {
    */
   def canDeserialize[A](implicit mf: Manifest[A]) = mapper.canDeserialize(Types.build(mapper.getTypeFactory, mf))
 
-  private[jerkson] def parse[A](parser: JsonParser, mf: Manifest[A]): A = {
+  private[jerkson] def parse[A](parser: JsonParser, mf: Manifest[A], closeParser: Boolean = true): A = {
     try {
       if (mf.erasure == classOf[JValue] || mf.erasure == JNull.getClass) {
         val value: A = parser.getCodec.readValue(parser, Types.build(mapper.getTypeFactory, mf))
@@ -95,6 +95,9 @@ trait Parser extends Factory {
     } catch {
       case e: JsonProcessingException => throw ParsingException(e)
       case e: EOFException => throw new ParsingException("JSON document ended unexpectedly.", e)
+    } finally {
+      if(closeParser)
+        parser.close()
     }
   }
 }

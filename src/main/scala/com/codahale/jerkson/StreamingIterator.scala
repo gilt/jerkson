@@ -16,7 +16,7 @@ class StreamingIterator[A](parser: JsonParser, mf: Manifest[A])
   def hasNext = parser.getCurrentToken != JsonToken.END_ARRAY && !parser.isClosed
 
   def next() = if (hasNext) {
-    val value = parse[A](parser, mf)
+    val value = parse[A](parser, mf, false)
     parser.nextToken()
     value
   } else Iterator.empty.next()

@@ -28,7 +28,7 @@ class CaseClassSupportSpec extends FlatSpec with Matchers {
 
   behavior of "A case class with lazy fields"
   it should "generates a JSON object with those fields evaluated" in {
-    generate(CaseClassWithLazyVal(1)) shouldBe """{"id":1,"woo":"yeah"}"""
+    generate(CaseClassWithLazyVal(1)) shouldBe """{"woo":"yeah","id":1}"""
   }
 
   it should "is parsable from a JSON object without those fields" in {

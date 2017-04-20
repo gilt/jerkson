@@ -18,9 +18,9 @@ scmInfo := Some(
 )
 
 /* scala versions and options */
-scalaVersion := "2.10.6"
+scalaVersion := "2.12.2"
 
-crossScalaVersions := Seq("2.10.6", "2.11.8")
+crossScalaVersions := Seq("2.12.2", "2.11.11", "2.10.6")
 
 // These options will be used for *all* versions.
 scalacOptions ++= Seq(
@@ -28,11 +28,6 @@ scalacOptions ++= Seq(
   "-unchecked",
   "-encoding", "UTF-8",
   "-optimise"
-)
-
-scalacOptions ++= Seq(
-  "-Yclosure-elim",
-  "-Yinline"
 )
 
 scalacOptions += "-target:jvm-1.6"
@@ -65,7 +60,6 @@ libraryDependencies ++= Seq(
 libraryDependencies <+= scalaVersion {
   "org.scala-lang" % "scala-reflect" % _
 }
-
 
 /* testing */
 parallelExecution in Test := true
